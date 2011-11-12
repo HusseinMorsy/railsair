@@ -1,6 +1,7 @@
 # encoding: utf-8
-Gegebensei /^ein Flug "([^"]*)" mit (\d+) freien Plätzen$/ do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+
+Gegebensei /^ein Flug "([^"]*)" mit (\d+) freien Plätzen$/ do |nr,seats|
+  Flight.create(nr: nr, max_seats: seats)
 end
 
 Wenn /^ich den Flug "([^"]*)" auswähle$/ do |arg1|
