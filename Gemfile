@@ -30,3 +30,11 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+group :test do
+  # Normalerweise Versionsnummer weglassen, um aktuelleste Version
+  # zu verwenden.
+  gem 'cucumber-rails', '1.2.0'
+  gem 'rspec-rails', '2.7.0'
+  gem 'database_cleaner', '0.6.7'
+  gem 'factory_girl', '2.2.0'
+end
