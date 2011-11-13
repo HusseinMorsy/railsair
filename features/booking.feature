@@ -8,7 +8,7 @@ Funktionalität: Buchung eines Railsair Fluges
     Wenn ich den Flug "RA-448" auswähle
     Und ich meine Personalien eingebe
     Und ich bezahle
-    Dann soll ich eine Buchungsbestätigung erhalten
+    Dann soll ich eine Buchungsbestätigung für den Flug "RA-448" erhalten
 
   Szenario: Das Buchen eines ausgebuchten Fluges soll nicht möglich sein
     Gegeben sei ein Flug "RA-448" mit 0 freien Plätzen

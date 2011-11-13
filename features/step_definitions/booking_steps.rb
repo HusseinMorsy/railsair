@@ -11,16 +11,21 @@ Wenn /^ich den Flug "([^"]*)" auswähle$/ do |flight_nr|
 end
 
 Wenn /^ich meine Personalien eingebe$/ do
-  fill_in :name, with: "Luke Skywalker"
-  fill_in :email, with: "luke@lucasarts.com"
+  fill_in "Name", with: "Luke Skywalker"
+  fill_in "Email", with: "luke@lucasarts.com"
 end
 
 Wenn /^ich bezahle$/ do
   click_button "pay"
 end
 
-Dann /^soll ich eine Buchungsbestätigung erhalten$/ do
-  pending # express the regexp above with the code you wish you had
+Dann /^soll ich eine Buchungsbestätigung für den Flug "([^"]*)" erhalten$/ do |nr|
+  page.should have_content("Your booking confirmation")
+  flight = Flight.find_by_nr(nr)
+  flight.should have(1).bookings
+  booking = flight.bookings.first
+  booking.name.should == "Luke Skywalker"
+  booking.email.should == "luke@lucasarts.com"
 end
 
 Dann /^soll mir angezeigt werden, dass der Flug ausgebucht ist$/ do
