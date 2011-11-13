@@ -4,8 +4,9 @@ Gegebensei /^ein Flug "([^"]*)" mit (\d+) freien Plätzen$/ do |nr,seats|
   Flight.create(nr: nr, max_seats: seats)
 end
 
-Wenn /^ich den Flug "([^"]*)" auswähle$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+Wenn /^ich den Flug "([^"]*)" auswähle$/ do |flight_nr|
+  visit flights_path
+  click_link flight_nr
 end
 
 Wenn /^ich meine Personalien eingebe$/ do
