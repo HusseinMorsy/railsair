@@ -37,4 +37,5 @@ group :test do
   gem 'rspec-rails', '2.7.0'
   gem 'database_cleaner', '0.6.7'
   gem 'factory_girl', '2.2.0'
+  gem 'launchy'
 end

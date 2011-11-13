@@ -1,7 +1,7 @@
 # encoding: utf-8
 
-Gegebensei /^ein Flug "([^"]*)" mit (\d+) freien Plätzen$/ do |nr,seats|
-  Flight.create(nr: nr, max_seats: seats)
+Gegebensei /^ein Flug "([^"]*)"$/ do |flight_nr|
+  Flight.create(nr: flight_nr)
 end
 
 Wenn /^ich den Flug "([^"]*)" auswähle$/ do |flight_nr|
