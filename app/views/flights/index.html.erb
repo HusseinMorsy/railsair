@@ -1,5 +1,5 @@
 <ul>
   <% @flights.each do |flight| %>
-    <li><%= link_to flight.nr %></li>
+    <li><%= link_to flight.nr, new_flight_booking_path(flight) %></li>
   <% end %>
 </ul>

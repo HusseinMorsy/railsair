@@ -1,5 +1,7 @@
 Railsair::Application.routes.draw do
-  resources :flights
+  resources :flights do
+    resources :bookings
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

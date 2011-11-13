@@ -7,10 +7,12 @@ end
 Wenn /^ich den Flug "([^"]*)" auswähle$/ do |flight_nr|
   visit flights_path
   click_link flight_nr
+  page.should have_content("Booking of RA-448")
 end
 
 Wenn /^ich meine Personalien eingebe$/ do
-  pending # express the regexp above with the code you wish you had
+  fill_in :name, with: "Luke Skywalker"
+  fill_in :email, with: "luke@lucasarts.com"
 end
 
 Wenn /^ich bezahle$/ do
