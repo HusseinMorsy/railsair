@@ -9,3 +9,10 @@ Funktionalität: Buchung eines Railsair Fluges
     Und ich meine Personalien eingebe
     Und ich bezahle
     Dann soll ich eine Buchungsbestätigung für den Flug "RA-448" erhalten
+  
+  Szenario: Bei Fehleingabe soll die Buchung nicht ausgeführt werden
+    Gegeben sei ein Flug "RA-448"
+    Wenn ich den Flug "RA-448" auswähle
+    Und ich meine Personalien nicht eingebe
+    Und ich bezahle
+    Dann soll mir eine Fehlermeldung angezeigt werden

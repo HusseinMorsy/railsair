@@ -28,6 +28,12 @@ Dann /^soll ich eine Buchungsbestätigung für den Flug "([^"]*)" erhalten$/ do 
   booking.email.should == "luke@lucasarts.com"
 end
 
-Dann /^soll mir angezeigt werden, dass der Flug ausgebucht ist$/ do
-  pending # express the regexp above with the code you wish you had
+Wenn /^ich meine Personalien nicht eingebe$/ do
+end
+
+Dann /^soll mir eine Fehlermeldung angezeigt werden$/ do
+  page.should_not have_content("Your booking confirmation")
+  page.should have_content("Booking of RA-448")
+  page.should have_content("Name can't be blank")
+  page.should have_content("Email can't be blank")
 end
