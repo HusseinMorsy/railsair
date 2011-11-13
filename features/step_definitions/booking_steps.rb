@@ -16,7 +16,7 @@ Wenn /^ich meine Personalien eingebe$/ do
 end
 
 Wenn /^ich bezahle$/ do
-  pending # express the regexp above with the code you wish you had
+  click_button "pay"
 end
 
 Dann /^soll ich eine Buchungsbestätigung erhalten$/ do
